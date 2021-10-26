@@ -4,7 +4,7 @@ services:
     scannerapi:
         build: 
             context: API
-        image: docker.com/scannerapi-fastapi:${BUILD_NUMBER}
+        image: docker.com/scannerapi-fastapi:latest
         environment:
             LOG_LEVEL: "Debug"
         ports:
@@ -14,7 +14,7 @@ services:
         depends_on:
             - mosquitto-server
     mosquitto-server:
-        image: eclipse-mosquitto:${BUILD_NUMBER}        
+        image: eclipse-mosquitto:latest      
         restart: always
         ports:
             - "1883:1883"
